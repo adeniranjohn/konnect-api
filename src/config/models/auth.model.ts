@@ -6,7 +6,7 @@ export interface Auth {
   createdAt: string;
   updatedAt: string;
   verify: boolean;
-  authType: OauthType;
+  authType: AuthType;
   externalId: string;
 }
 
@@ -17,7 +17,7 @@ export enum Role {
   SUPERMANAGER = 'SUPERMANAGER',
 }
 
-export enum OauthType {
+export enum AuthType {
   GOOGLE = 'GOOGLE',
   FACEBOOK = 'FACEBOOK',
   PASSWORD = 'PASSWORD',

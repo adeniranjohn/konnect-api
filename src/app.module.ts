@@ -6,9 +6,20 @@ import { ProviderModule } from './api/provider/provider.module';
 import { AuthModule } from './api/auth/auth.module';
 import { MailModule } from './config/mail/mail.module';
 import { StorageModule } from './config/storage/storage.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { postgreConfig } from './config/database/typeorm.config';
 
 @Module({
-  imports: [GuestModule, UserModule, ManagerModule, ProviderModule, AuthModule, MailModule, StorageModule],
+  imports: [
+    TypeOrmModule.forRoot(postgreConfig),
+    GuestModule,
+    UserModule,
+    ManagerModule,
+    ProviderModule,
+    AuthModule,
+    MailModule,
+    StorageModule,
+  ],
   controllers: [],
   providers: [],
 })
